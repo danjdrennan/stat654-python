@@ -5,3 +5,6 @@
 *.jpeg
 *.html
 *.pdf
+
+# ignore ide-specific files
+.vscode
