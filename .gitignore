@@ -1,0 +1,7 @@
+# ignore any datasets, image files, or other materials generated as reports
+*.csv
+*.png
+*.jpg
+*.jpeg
+*.html
+*.pdf
