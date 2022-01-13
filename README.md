@@ -47,3 +47,8 @@ YouTube has great instructions for getting started with either one.
 Datasets are sourced from the UCI Machine Learning Repository.
 The [Auto MPG](https://archive-beta.ics.uci.edu/ml/datasets/auto+mpg) dataset will be used for regression.
 The [Iris](https://archive-beta.ics.uci.edu/ml/datasets/iris) dataset will be used for classification.
+References for the respective datasets are below:
+
+1. Auto MPG. (1993). UCI Machine Learning Repository.
+
+2. Fisher, R.A.. (1988). Iris. UCI Machine Learning Repository.
