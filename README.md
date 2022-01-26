@@ -1,4 +1,10 @@
-# Getting Started With Python for Data Analysis
+# STAT654: Statistical Computing with R and Python
+
+Instructor: Professor Sharmistha Guha
+TA: Dan Drennan
+
+Term: Spring 2022
+## Intro
 
 The repo includes a tutorial for using Python for simple data analyses using the Scipy suite of libraries.
 We'll also look at the statsmodels library for regression and classification modeling.
