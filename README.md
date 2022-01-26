@@ -1,9 +1,10 @@
 # STAT654: Statistical Computing with R and Python
 
-Instructor: Professor Sharmistha Guha
-TA: Dan Drennan
+**Instructor: Professor Sharmistha Guha**
 
-Term: Spring 2022
+**TA: Dan Drennan**
+
+**Term: Spring 2022**
 ## Intro
 
 The repo includes a tutorial for using Python for simple data analyses using the Scipy suite of libraries.
