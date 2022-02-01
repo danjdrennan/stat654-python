@@ -37,6 +37,27 @@ but additional tutorials via YouTube are shared below:
 
 * [Anaconda Beginners Guide for Linux and Windows - Python Working Environments Tutorial](https://youtu.be/MUZtVEDKXsk)
 
+### Conda environments
+
+If you're looking for a complete Python environment (collection of libraries/packages) to get started,
+you may be interested in creating an environment from the `stats.yml` file in this repository.
+Steps to install this environment:
+
+1. Install the conda package manager
+
+2. Download this repository locally
+
+3. Open a conda terminal
+
+4. In the terminal, execute
+
+```bash
+$ conda env create -f stats.yml
+```
+
+More details on conda environments can be found at
+[docs.conda.io/mange-environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
+
 ## Developer Environments
 
 As R is a language and RStudio is a developer environment for using R,
