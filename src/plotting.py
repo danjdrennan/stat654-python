@@ -3,7 +3,7 @@ from typing import Union
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot(x: np.ndarray, y: np.ndarray, labels:dict=None, fname:str=None, **kwargs)->None:
+def plot(x: np.ndarray, y: np.ndarray, figsize:tuple=(16,9), labels:dict=None, fname:str=None, *args, **kwargs)->None:
     """
     Helper function for plotting data using plt.plot function.
     The plotter standardizes grids and figure sizes, and reduces overhead.
@@ -15,6 +15,9 @@ def plot(x: np.ndarray, y: np.ndarray, labels:dict=None, fname:str=None, **kwarg
 
     y: numpy.ndarray or list-like
         Data to plot on the vertical axis
+
+    figsize: tuple: Defaults to (16,9)
+        Sets the size of a figure. Fontsizes are set relative to the first dimension.
 
     labels: dict
         A dictionary of plot labels, including
@@ -35,19 +38,21 @@ def plot(x: np.ndarray, y: np.ndarray, labels:dict=None, fname:str=None, **kwarg
     """
     plt.figure(figsize=(16, 9))
     
+    figwidth = figsize[0]
+
     # If labels are present, use them
     # Assume labels are correctly passed as a dict with expected keys
     if labels:
         try:
-            plt.title(labels['title'], fontsize=24)
+            plt.title(labels['title'], fontsize=1.5*figwidth)
         except Exception:
             pass
         try:
-            plt.xlabel(labels['x_label'], fontsize=20)
+            plt.xlabel(labels['x_label'], fontsize=1.25*figwidth)
         except Exception:
             pass
         try:
-            plt.ylabel(labels['y_label'], fontsize=20)
+            plt.ylabel(labels['y_label'], fontsize=1.25*figwidth)
         except Exception:
             pass
     
