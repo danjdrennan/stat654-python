@@ -7,7 +7,13 @@
 *.pdf
 *.data
 *.names
+bda3
 
 # ignore ide-specific files
 .vscode
 .vs
+
+# ignore python junk
+__pycache__
+*.pyc
+src/__pycache__/plotting.cpython-310.pyc
