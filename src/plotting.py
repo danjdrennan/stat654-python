@@ -36,7 +36,7 @@ def plot(x: np.ndarray, y: np.ndarray, figsize:tuple=(16,9), labels:dict=None, f
     fname: str
         A filename to save the plot. The filename should include an extension.
     """
-    plt.figure(figsize=(16, 9))
+    plt.figure(figsize=figsize)
     
     figwidth = figsize[0]
 
