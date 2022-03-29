@@ -1,5 +1,6 @@
 # ignore any datasets, image files, or other materials generated as reports
 *.csv
+*.txt
 *.png
 *.jpg
 *.jpeg
@@ -8,6 +9,9 @@
 *.data
 *.names
 bda3
+
+# ignore all data files in data/.
+data/.
 
 # ignore ide-specific files
 .vscode
