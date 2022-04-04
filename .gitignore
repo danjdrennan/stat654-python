@@ -12,6 +12,7 @@ bda3
 
 # ignore all data files in data/.
 data/.
+homework/*
 
 # ignore ide-specific files
 .vscode
