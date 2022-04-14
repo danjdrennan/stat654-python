@@ -1,0 +1,83 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[margin=4cm]{geometry}
+
+\usepackage{amsmath, amsthm, amssymb}
+
+\title{The t distribution as a hierarchical model}
+\author{Dan Drennan}
+\date{2022 April 13}
+
+
+\begin{document}
+    
+\maketitle
+
+The density for a $t$ distribution with $\nu$ degrees of freedom,
+location $\mu \in \mathbb{R}$, and scale $\sigma > 0$ is
+\begin{equation}
+    f(t | \nu, \mu, \sigma) =
+    \frac{\Gamma(\frac{\nu + 1}{2})}{\sigma\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}\left[
+        1 + \frac{\left(\frac{x - \mu}{\sigma}\right)^2}{\nu}
+    \right]^{-\frac{\nu + 1}{2}}.
+    \label{eqn:tdist}
+\end{equation}
+It turns out that the distribution can be written hierarchically as
+\begin{align*}
+    X | \tau &\sim N(\mu, \tau^{-1}\sigma^2), \\
+    \tau &\sim \text{Gamma}\left(\frac{\nu}{2}, \frac{\nu}{2}\right),
+\end{align*}
+where
+$$
+    f(\tau | \frac{\nu}{2}, \frac{\nu}{2}) = 
+    \frac{(\nu/2)^{\nu/2}}{\Gamma(\frac{\nu}{2})} \tau^{\nu/2 - 1} e^{-\frac{\nu\tau}{2}}
+$$
+a gamma density. The density in \eqref{eqn:tdist} is obtained by marginalizing 
+$X | \tau$ over $\tau$:
+\begin{align*}
+    \int_{0}^{\infty} N(\mu, \tau^{-1}\sigma^2) \text{Gamma}\left(\frac{\nu}{2}, \frac{\nu}{2}\right) d\tau
+    &= 
+        \int_{0}^{\infty} \frac{\sqrt{\tau}}{\sqrt{2\pi\sigma^2}}
+        e^{-\frac{\tau}{2}\left(\frac{x - \mu}{\sigma}\right)^2}
+        \frac{(\frac{\nu}{2})^{\frac{\nu}{2}}}{\Gamma(\frac{\nu}{2})} 
+        \tau^{\frac{\nu}{2} - 1} e^{-\frac{\nu\tau}{2}} d\tau \\
+    &=
+        \frac{(\frac{\nu}{2})^{\frac{\nu}{2}}}{\sigma\sqrt{2\pi}\Gamma(\frac{\nu}{2})} \int_{0}^{\infty}
+        \tau^{\frac{\nu-1}{2}} e^{-\frac{\tau}{2}\left[
+            \nu + \left(\frac{x - \mu}{\sigma}\right)^2
+        \right]} d\tau \\
+    &= I.
+\end{align*}
+After a change of variables, the integral is a gamma function. Let $y = (x - \mu) / \sigma$ and make the
+substitution $2u = \tau(\nu + y^2)$ so $2du = (\nu + y^2)d\tau$. Then
+\begin{align*}
+    I
+    &= 
+        \frac{(\frac{\nu}{2})^{\frac{\nu}{2}}}{\sigma\sqrt{2\pi}\Gamma(\frac{\nu}{2})} \int_{0}^{\infty}
+        \left(\frac{2u}{\nu + y^2}\right)^{\frac{\nu-1}{2}} e^{-u} \frac{2du}{\nu + y^2} \\
+    &=
+        \frac{(\frac{\nu}{2})^{\frac{\nu}{2}}}{\sigma\sqrt{2\pi}\Gamma(\frac{\nu}{2})}
+        \left(\frac{2}{\nu + y^2}\right)^{\frac{\nu + 1}{2}}
+        \underset{\Gamma(\frac{\nu + 1}{2})}{\underbrace{
+            \int_{0}^{\infty} u^{\frac{\nu - 1}{2}} e^{-u} du
+        }} \\
+    &=
+    \frac{(\frac{\nu}{2})^{\frac{\nu}{2}}}{\sigma\sqrt{2\pi}\Gamma(\frac{\nu}{2})}
+    2^{\frac{\nu + 1}{2}}\left(\nu + y^2\right)^{-\frac{\nu + 1}{2}}
+    \Gamma\left(\frac{\nu+1}{2}\right) \\
+    &=
+        \frac{
+            (\frac{\nu}{2})^{\frac{\nu}{2} - \frac{\nu+1}{2}}\Gamma(\frac{\nu+1}{2})
+        }{
+            \sigma\sqrt{2\pi}\Gamma(\frac{\nu}{2})
+        }\left(1 + \frac{y^2}{2}\right)^{-\frac{\nu + 1}{2}}\\
+    &=
+        \frac{\Gamma(\frac{\nu + 1}{2})}{\sigma\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}\left[
+            1 + \frac{\left(\frac{x - \mu}{\sigma}\right)^2}{\nu}
+        \right]^{-\frac{\nu + 1}{2}}.
+\end{align*}
+I've shown almost every algebraic step and verified they are correct. If any step does not make sense, feel free to
+contact me and I will be happy to explain it. I highly recommend working through this derivation with a pen
+and paper yourself. At the start, write both densities in the hierarchical model and the target density. Then
+make sure each step in this derivation makes sense.
+
+\end{document}
