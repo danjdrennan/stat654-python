@@ -4,6 +4,8 @@
 
 **TA: Dan Drennan**
 
+**Texas A&M University, College Station, Texas, USA**
+
 **Term: Spring 2022**
 ## Intro
 
@@ -30,8 +32,10 @@ For the best experience using these, users are recommended to download the
 [Anaconda distribution](https://www.anaconda.com/products/individual) and its `conda` package manager.
 This is a fairly large distribution, and experienced users may prefer to download the
 [miniconda distribution](https://docs.conda.io/en/latest/miniconda.html) instead.
-Both sites have pretty good documentation for downloading and installing the software,
-but additional tutorials via YouTube are shared below:
+The major difference is that Anaconda comes with a GUI application for package
+and environment management. The miniconda (and main anaconda distribution) comes
+only with a command line interface. Both sites have good documentation for downloading
+and installing the package manager but additional tutorials via YouTube are shared below:
 
 * [Python Tutorial: Anaconda - Installation and Using Conda](https://youtu.be/YJC6ldI3hWk)
 
@@ -62,9 +66,10 @@ More details on conda environments can be found at
 
 As R is a language and RStudio is a developer environment for using R,
 Python is a language that is best used in some form of a developer environment.
-I personally recommend using [Microsoft Visual Studio Code](https://code.visualstudio.com/) as your Python environment,
+I personally recommend using [Microsoft Visual Studio
+Code](https://code.visualstudio.com/) as your Python IDE,
 although [Pycharm](https://www.jetbrains.com/pycharm/) is a popular alternative.
-Finally, RStudio can be used to interpret Python.
+RStudio can also be used to interpret Python.
 
 **Disclaimer**:
 I have no experience setting up the latter two environments.
